@@ -1,8 +1,233 @@
-header {
-  background:
-    linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.75)),
-    url('logo.jpg') center/cover no-repeat;
-  text-align: center;
-  padding: 50px 15px;
-  color: white;
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ShivShakti Sounds | Dhamari Wala</title>
+
+<style>
+* {
+  box-sizing: border-box;
 }
+
+body {
+  margin: 0;
+  background: #090914;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  text-align: center;
+  padding: 35px 15px;
+  background: linear-gradient(135deg, #7300ff, #ff1744, #ff7900);
+}
+
+.logo {
+  width: 130px;
+  height: 130px;
+  object-fit: contain;
+  border-radius: 18px;
+  margin-bottom: 10px;
+}
+
+header h1 {
+  font-size: 34px;
+  margin: 8px 0;
+}
+
+header p {
+  font-size: 19px;
+}
+
+main {
+  max-width: 800px;
+  margin: auto;
+  padding: 16px;
+}
+
+.card {
+  background: #202035;
+  border-radius: 18px;
+  padding: 20px;
+  margin: 20px 0;
+  text-align: center;
+}
+
+h2 {
+  color: #ffd166;
+}
+
+.photo {
+  width: 100%;
+  max-height: 500px;
+  object-fit: contain;
+  border-radius: 12px;
+  background: #101018;
+  margin-top: 10px;
+}
+
+button, .btn {
+  display: inline-block;
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  background: #20c866;
+  color: white;
+  font-size: 17px;
+  text-decoration: none;
+  margin-top: 12px;
+  cursor: pointer;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 14px;
+  margin: 8px 0 15px;
+  border: none;
+  border-radius: 9px;
+  font-size: 16px;
+}
+
+label {
+  display: block;
+  text-align: left;
+}
+
+footer {
+  text-align: center;
+  padding: 25px;
+  color: #ddd;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <img class="logo" src="logo.jpg"
+       alt="ShivShakti Sounds Logo">
+
+  <h1>🔊 ShivShakti Sounds</h1>
+  <p>Dhamari Wala</p>
+  <p>तुमच्या कार्यक्रमासाठी दमदार साउंड!</p>
+</header>
+
+<main>
+
+<section class="card">
+  <h2>🚚 आमची गाडी</h2>
+  <img class="photo" src="gadi.jpg"
+       alt="ShivShakti Sounds ची गाडी">
+</section>
+
+<section class="card">
+  <h2>🔊 4 टॉप + 4 बेस</h2>
+  <p>मोठे कार्यक्रम • लग्न • मिरवणूक • स्टेज कार्यक्रम</p>
+  <img class="photo" src="sound4.jpg"
+       alt="4 टॉप आणि 4 बेस साउंड सेटअप">
+</section>
+
+<section class="card">
+  <h2>🔊 2 टॉप + 2 बेस</h2>
+  <p>वाढदिवस • छोटे कार्यक्रम • घरगुती समारंभ</p>
+  <img class="photo" src="sound2.jpg"
+       alt="2 टॉप आणि 2 बेस साउंड सेटअप">
+</section>
+
+<section class="card">
+  <h2>📅 ऑनलाइन बुकिंग</h2>
+
+  <form id="bookingForm">
+    <label>तुमचे पूर्ण नाव *</label>
+    <input id="name" required placeholder="पूर्ण नाव">
+
+    <label>मोबाईल नंबर *</label>
+    <input id="phone" type="tel"
+           pattern="[0-9]{10}" maxlength="10"
+           required placeholder="10 अंकी नंबर">
+
+    <label>कार्यक्रमाचा प्रकार *</label>
+    <select id="event" required>
+      <option value="">निवडा</option>
+      <option>लग्न</option>
+      <option>मिरवणूक</option>
+      <option>वाढदिवस</option>
+      <option>धार्मिक कार्यक्रम</option>
+      <option>स्टेज कार्यक्रम</option>
+      <option>इतर कार्यक्रम</option>
+    </select>
+
+    <label>साउंड सेटअप *</label>
+    <select id="setup" required>
+      <option value="">निवडा</option>
+      <option>4 टॉप + 4 बेस</option>
+      <option>2 टॉप + 2 बेस</option>
+    </select>
+
+    <label>कार्यक्रमाची तारीख *</label>
+    <input id="date" type="date" required>
+
+    <label>कार्यक्रमाची वेळ *</label>
+    <input id="time" type="time" required>
+
+    <label>कार्यक्रमाचे ठिकाण *</label>
+    <input id="place" required placeholder="गाव / ठिकाण">
+
+    <button type="submit">WhatsApp वर बुकिंग पाठवा</button>
+  </form>
+</section>
+
+<section class="card">
+  <h2>📱 Instagram वर आम्हाला फॉलो करा</h2>
+  <a class="btn"
+     href="https://www.instagram.com/shivshakti_sounds_dhamari_wala/"
+     target="_blank" rel="noopener">
+     Instagram उघडा
+  </a>
+</section>
+
+</main>
+
+<footer>
+  <p>🔊 ShivShakti Sounds — Dhamari Wala</p>
+  <p>तुमच्या कार्यक्रमासाठी दमदार साउंड!</p>
+</footer>
+
+<script>
+document.getElementById("bookingForm")
+.addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const name = document.getElementById("name").value;
+  const phone = document.getElementById("phone").value;
+  const event = document.getElementById("event").value;
+  const setup = document.getElementById("setup").value;
+  const date = document.getElementById("date").value;
+  const time = document.getElementById("time").value;
+  const place = document.getElementById("place").value;
+
+  const message =
+    "ShivShakti Sounds Booking%0A" +
+    "नाव: " + encodeURIComponent(name) + "%0A" +
+    "मोबाईल: " + encodeURIComponent(phone) + "%0A" +
+    "कार्यक्रम: " + encodeURIComponent(event) + "%0A" +
+    "सेटअप: " + encodeURIComponent(setup) + "%0A" +
+    "तारीख: " + encodeURIComponent(date) + "%0A" +
+    "वेळ: " + encodeURIComponent(time) + "%0A" +
+    "ठिकाण: " + encodeURIComponent(place);
+
+  const businessNumber = "9764621418";
+
+  window.open(
+    "https://wa.me/" + "91" + businessNumber +
+    "?text=" + message,
+    "_blank"
+  );
+});
+</script>
+
+</body>
+</html>
