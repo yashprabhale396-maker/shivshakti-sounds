@@ -6,12 +6,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ShivShakti Sounds Dhamari Wala</title>
 <style>
-body{margin:0;background:#10101b;color:white;font-family:Arial;text-align:center}
-header{background:linear-gradient(135deg,#7000ff,#f04b20);padding:35px 15px}
-h1{font-size:30px}
-section{margin:20px;padding:22px;background:#242438;border-radius:15px}
-button{background:#ffb52e;border:0;padding:14px 20px;border-radius:8px;font-weight:bold}
-a{color:#ffcf70}
+*{box-sizing:border-box}
+body{margin:0;background:#10101b;color:white;font-family:Arial,sans-serif}
+header{text-align:center;padding:35px 15px;background:linear-gradient(135deg,#7000ff,#f04b20)}
+header h1{font-size:30px}
+main{max-width:650px;margin:auto;padding:16px}
+.card{background:#242438;padding:22px;margin:18px 0;border-radius:16px}
+h2{text-align:center;color:#ffd16a}
+label{display:block;margin:14px 0 6px}
+input,select,textarea{width:100%;padding:13px;border:0;border-radius:8px;font-size:16px}
+button{width:100%;padding:15px;margin-top:18px;border:0;border-radius:9px;background:#20c866;color:white;font-size:17px;font-weight:bold}
+.note{font-size:13px;line-height:1.6;color:#ddd}
+a{color:#ffd16a}
 </style>
 </head>
 <body>
@@ -20,15 +26,67 @@ a{color:#ffcf70}
 <p>Dhamari Wala</p>
 <p>तुमच्या कार्यक्रमासाठी दमदार साउंड!</p>
 </header>
-<section>
-<h2>आमची साउंड सिस्टीम</h2>
-<p>🔊 4 टॉप | 4 बेस | 2 डाउन-बेस</p>
-<p>लग्न • मिरवणूक • वाढदिवस • इतर कार्यक्रम</p>
+<main>
+<section class="card">
+<h2>🔊 आमची साउंड सिस्टीम</h2>
+<p style="text-align:center">4 टॉप • 4 बेस • 2 डाउन-बेस</p>
+<p style="text-align:center">लग्न • मिरवणूक • वाढदिवस • इतर कार्यक्रम</p>
 </section>
-<section>
-<h2>बुकिंगसाठी संपर्क</h2>
-<p>तुमची तारीख आणि वेळ निश्चित करण्यासाठी आमच्याशी संपर्क साधा.</p>
+<section class="card">
+<h2>📅 ऑनलाइन बुकिंग</h2>
+<form id="bookingForm">
+<label for="name">तुमचे नाव *</label>
+<input id="name" required placeholder="पूर्ण नाव">
+<label for="phone">तुमचा मोबाइल नंबर *</label>
+<input id="phone" type="tel" pattern="[0-9]{10}" maxlength="10" required placeholder="10 अंकी नंबर">
+<label for="event">कार्यक्रमाचा प्रकार *</label>
+<select id="event" required>
+<option value="">निवडा</option>
+<option>लग्न</option>
+<option>मिरवणूक</option>
+<option>वाढदिवस</option>
+<option>साखरपुडा</option>
+<option>धार्मिक कार्यक्रम</option>
+<option>इतर कार्यक्रम</option>
+</select>
+<label for="date">कार्यक्रमाची तारीख *</label>
+<input id="date" type="date" required>
+<label for="time">कार्यक्रमाची वेळ *</label>
+<input id="time" type="time" required>
+<label for="place">कार्यक्रमाचे ठिकाण *</label>
+<input id="place" required placeholder="गाव / ठिकाण">
+<label for="details">अधिक माहिती (ऐच्छिक)</label>
+<textarea id="details" rows="3" placeholder="इतर माहिती"></textarea>
+<button type="submit">📲 WhatsApp वर बुकिंग पाठवा</button>
+</form>
+<p class="note">बुकिंग निश्चित होण्यासाठी मालकाची पुष्टी आवश्यक आहे. तारीख उपलब्ध आहे का ते मालकाला विचारा.</p>
+</section>
+<section class="card" style="text-align:center">
+<h2>📞 संपर्क</h2>
+<p>WhatsApp: +91 78752 95262</p>
 <a href="https://www.instagram.com/shivshakti_sounds_dhamari_wala/" target="_blank">आमचे Instagram पाहा</a>
 </section>
+</main>
+<script>
+const dateInput=document.getElementById("date");
+const now=new Date();
+dateInput.min=new Date(now.getTime()-now.getTimezoneOffset()*60000).toISOString().slice(0,10);
+document.getElementById("bookingForm").addEventListener("submit",function(e){
+e.preventDefault();
+const v=id=>document.getElementById(id).value.trim();
+const msg=`🔊 ShivShakti Sounds - बुकिंग विनंती
+
+नाव: ${v("name")}
+ग्राहकाचा नंबर: ${v("phone")}
+कार्यक्रम: ${v("event")}
+तारीख: ${v("date")}
+वेळ: ${v("time")}
+ठिकाण: ${v("place")}
+अधिक माहिती: ${v("details")||"नाही"}
+
+कृपया तारीख आणि वेळ उपलब्ध आहे का ते कळवा.`;
+window.location.href="https://wa.me/917875295262?text="+encodeURIComponent(msg);
+});
+</script>
 </body>
 </html>
